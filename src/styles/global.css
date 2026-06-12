@@ -1,0 +1,135 @@
+/* ============================================
+   GLOBAL STYLES — FinFlow Finance Dashboard
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+/* ---- CSS Variables ---- */
+:root {
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-body:    "DM Sans", system-ui, sans-serif;
+
+  /* Light theme */
+  --bg-base:       #f5f3ee;
+  --bg-surface:    #ffffff;
+  --bg-surface2:   #f9f8f5;
+  --bg-hover:      #f0ede6;
+  --border:        #e8e4dc;
+  --border-strong: #d4cfc5;
+
+  --text-primary:  #1a1814;
+  --text-secondary:#6b6559;
+  --text-muted:    #9e9589;
+
+  --accent:        #c8a96e;
+  --accent-soft:   #f5edde;
+  --accent-dark:   #a8893e;
+
+  --income-color:  #2d8a5e;
+  --income-bg:     #e8f5ee;
+  --expense-color: #c0392b;
+  --expense-bg:    #fcecea;
+
+  --shadow-sm:     0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:     0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg:     0 10px 30px rgba(0,0,0,0.10), 0 4px 10px rgba(0,0,0,0.06);
+
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  18px;
+  --radius-xl:  24px;
+
+  --sidebar-w: 240px;
+  --topbar-h:  64px;
+
+  --transition: 0.2s ease;
+}
+
+[data-theme="dark"] {
+  --bg-base:       #111009;
+  --bg-surface:    #1c1a14;
+  --bg-surface2:   #232118;
+  --bg-hover:      #2a2820;
+  --border:        #2e2c22;
+  --border-strong: #3d3b2e;
+
+  --text-primary:  #f0ece2;
+  --text-secondary:#a09880;
+  --text-muted:    #6b6550;
+
+  --accent:        #c8a96e;
+  --accent-soft:   #2a2416;
+  --accent-dark:   #e0c080;
+
+  --income-color:  #4ade80;
+  --income-bg:     #0d2318;
+  --expense-color: #f87171;
+  --expense-bg:    #2a1010;
+
+  --shadow-sm:     0 1px 3px rgba(0,0,0,0.30);
+  --shadow-md:     0 4px 12px rgba(0,0,0,0.40);
+  --shadow-lg:     0 10px 30px rgba(0,0,0,0.50);
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background var(--transition), color var(--transition);
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: var(--font-body);
+  outline: none;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 99px; }
+
+/* ---- Animations ---- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+.animate-fade  { animation: fadeIn  0.35s ease both; }
+.animate-slide { animation: slideIn 0.35s ease both; }
+.animate-scale { animation: scaleIn 0.25s ease both; }
